@@ -7,8 +7,7 @@ let val;
 let clearPressed = false;
 let linesPressed = false;
 let newCanvas;
-let circlePressed = false;
-let circles = false;
+
 
 function setup() {
   
@@ -23,34 +22,19 @@ function setup() {
   
   clearButton = createButton('Clear');
   clearButton.position(500, 10);
-  clearButton.mousePressed(erased);
-  
-  // lineButton = createButton ('Lines');
-  // lineButton.position(300, 10);
-  // lineButton.mousePressed(lineIsPressed);
-  
-  // circleButton = createButton ('Circles');
-  // circleButton.position(300, 10);
-  // circleButton.mousePressed(circleIsPressed);  
+  clearButton.mousePressed(erased); 
 }
 
 function draw() {
   clear();
   val = slider.value();
   background(val);
-  
-  //if (linesPressed == true){
-    drawLine();
-  //}
+  drawLine();
   
   
   if(clearPressed == true){
     erased();
    }
-  
-  // if(circleIsPressed == true){
-  //   drawCircles();
-  // }
   
   }
   
@@ -78,13 +62,8 @@ function drawLine() {
   }
 }
 
-// function clearIsPressed(){
-//   clearPressed = true;
-// }
-
 function lineIsPressed(){
   linePressed = true;
-  //isDrawing = true;
 }
 
 function erased() {
@@ -96,10 +75,4 @@ function saveArt() {
   saveCanvas(canvas, 'myCanvas', 'jpg');
 }
 
-// function drawCircles(){
-//     if (mouseIsPressed == true) {
-//       fill(brushColor);
-//       ellipse(mouseX, mouseY, 10, 10);
-      
-//   }
 
